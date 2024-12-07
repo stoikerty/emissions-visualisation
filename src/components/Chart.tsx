@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   ComposedChart,
@@ -11,60 +13,91 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// Sample data
-const data = [
-  { name: "Jan", totalEmissions: 100, emissionsIntensity: 75 },
-  { name: "Feb", totalEmissions: 90, emissionsIntensity: 70 },
-  { name: "Mar", totalEmissions: 80, emissionsIntensity: 65 },
-  { name: "Apr", totalEmissions: 70, emissionsIntensity: 60 },
-  { name: "May", totalEmissions: 65, emissionsIntensity: 55 },
-  { name: "Jun", totalEmissions: 60, emissionsIntensity: 50 },
-  { name: "Jul", totalEmissions: 55, emissionsIntensity: 45 },
-  { name: "Aug", totalEmissions: 50, emissionsIntensity: 40 },
-  { name: "Sep", totalEmissions: 45, emissionsIntensity: 35 },
-  { name: "Oct", totalEmissions: 40, emissionsIntensity: 30 },
-  { name: "Nov", totalEmissions: 35, emissionsIntensity: 25 },
-  { name: "Dec", totalEmissions: 30, emissionsIntensity: 20 },
+interface ChartData {
+  name: string;
+  emissions: number;
+  intensity: number;
+}
+
+const data: ChartData[] = [
+  { name: "Jan", emissions: 100, intensity: 75 },
+  { name: "Feb", emissions: 90, intensity: 70 },
+  { name: "Mar", emissions: 80, intensity: 65 },
+  { name: "Apr", emissions: 70, intensity: 60 },
+  { name: "May", emissions: 65, intensity: 55 },
+  { name: "Jun", emissions: 60, intensity: 50 },
+  { name: "Jul", emissions: 55, intensity: 45 },
+  { name: "Aug", emissions: 50, intensity: 40 },
+  { name: "Sep", emissions: 45, intensity: 35 },
+  { name: "Oct", emissions: 40, intensity: 30 },
+  { name: "Nov", emissions: 35, intensity: 25 },
+  { name: "Dec", emissions: 30, intensity: 20 },
 ];
 
-const EmissionsChart = () => {
+const renderLegendText = (value: string, entry: any) => {
+  return <span style={{ color: "#787D7F" }}>{value}</span>;
+};
+
+const EmissionsChart: React.FC = () => {
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <ComposedChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+    <ResponsiveContainer width="100%" height={500}>
+      <ComposedChart data={data} barSize="19">
+        <CartesianGrid stroke="#F4F4F4" />
+        <XAxis
+          dataKey="name"
+          axisLine={false}
+          tickLine={false}
+          tick={{ fill: "#787D7F" }}
+        />
         <YAxis
           yAxisId="left"
+          axisLine={false}
+          tickLine={false}
+          tick={{ fill: "#787D7F" }}
           label={{
             value: "Total emissions (tCO2e)",
             angle: -90,
             position: "insideLeft",
+            fill: "#787D7F",
+            style: { textAnchor: "middle" },
           }}
         />
         <YAxis
           yAxisId="right"
           orientation="right"
+          axisLine={false}
+          tickLine={false}
+          tick={{ fill: "#787D7F" }}
           label={{
             value: "Emissions Intensity (kgCO2e / m2)",
             angle: -90,
             position: "insideRight",
+            fill: "#787D7F",
+            style: { textAnchor: "middle" },
           }}
         />
         <Tooltip />
-        <Legend />
+        <Legend
+          formatter={renderLegendText}
+          iconType="square"
+          iconSize={12}
+          align="left"
+        />
+
         <Bar
           yAxisId="left"
-          dataKey="totalEmissions"
-          fill="#00d2aa"
-          name="Total emissions"
+          dataKey="emissions"
+          fill="#00D3B9"
+          name="Total Emissions (tCO2e)"
         />
         <Line
           yAxisId="right"
-          type="monotone"
-          dataKey="emissionsIntensity"
-          stroke="#c084f5"
-          dot={{ stroke: "#c084f5", strokeWidth: 2 }}
-          name="Emissions intensity"
+          type="linear"
+          dataKey="intensity"
+          stroke="#A761C1"
+          strokeWidth={2}
+          name="Emissions Intensity (kgCO2e / m2)"
+          dot={{ fill: "#A761C1", r: 4 }} // Custom dot color and size
         />
       </ComposedChart>
     </ResponsiveContainer>

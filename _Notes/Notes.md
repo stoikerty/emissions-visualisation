@@ -38,7 +38,7 @@ One of the most important facets of this work is which charting library should b
 - D3 is an extremely popular charting library and has been for years, so choosing `Recharts` which itself is based on D3 was therefore an easy choice. The interoperability with D3 is a major benefit, and active maintenance was confirmed by checking the last commit which had been made within the last week.
 
 ## Building the project
-Creating the project boilerplate
+### Creating the project boilerplate
 - use latest node LTS release (v20.9.0) via `.nvmrc`
 - generated new project with `npx create-next-app@latest [APP]`
 - added popular styled-components library for general purpose styling
@@ -46,7 +46,13 @@ Creating the project boilerplate
 - extracted logo svg from figma
 - created a favicon based on the color scheme from navigation
 
-Creating the Chart component
+### Creating the Chart component
 - created a sample chart using static data, using chatGPT with a reference screenshot of the chart (see file `_Notes/Generated Chart via ChatGPT.jpeg`)
 - verified sample code for consistency and potential faults
 - read up on [Recharts API](https://recharts.org/en-US/api) as a reference guide
+- adjusted colors and design based on figma project for design accuracy
+- challenges:
+	- rendering color for text differs between chart components (not everything is considered a `label`)
+	- the `Legend` component has various defaults which needed to be customised using more complex parameters (custom `renderLegendText` method  on `formatter` prop for customising color)
+	- there are slight discrepancies on the styling of the legend (text not correctly center aligned, small margin between legend and chart, no rounded corners on square icon). This could be further customised with a custom prop `content={renderLegend}` similar to the `formatter` prop, or by further exploring the recharts api.
+- left surrounding style out for now (headings and three dots on the right)

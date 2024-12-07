@@ -9,7 +9,7 @@ const ImageBackground = styled.div`
   padding: 16px;
   background-color: #081014;
 `;
-const Text = styled.div`
+const PageContainer = styled.div`
   padding: 16px;
 `;
 
@@ -25,8 +25,12 @@ export default function Home() {
           priority
         />
       </ImageBackground>
-      <Text>Antwerp plant</Text>
-      <Chart />
+      <PageContainer>
+        Antwerp plant
+        <br />
+        <br />
+        <Chart />
+      </PageContainer>
     </>
   );
 }
