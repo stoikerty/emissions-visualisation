@@ -59,3 +59,10 @@ One of the most important facets of this work is which charting library should b
 ### Fetching the data
 - use generic fetch available on the browser
 - we are not passing data directly to the app in order to respect the boundary between api and user interface. this mitigates future changes to the api allows for structured flexibility
+
+### Cut corners
+- used chatGPT to accelerate coming up with an initial styled chart. styling can be a bit of a rabbit-hole, and I didn't want to spend too much time reading the rechart docs
+- didn't use css-variables or "mini" design system. for a simple 1-page this can be ok, but a more elaborate design system should be created for efficient re-use of styles
+- Chart component was not extracted into separate component and currently is too opinionated on the styles it contains. It is however isolated from other functionality and can be moved out to be shared without a lot of effort
+- omitted the small three-dot icon. the figma-design didn't use an svg, so I skipped this
+
