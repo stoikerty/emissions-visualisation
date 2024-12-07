@@ -1,7 +1,31 @@
 const API_URL = "https://v1-flask.api-dev-green.emitwise.com/interview/data";
 
 const emissionsAdapter = (apiResponse) => {
-  return apiResponse;
+  const totalEmissions = apiResponse["Total emissions"];
+  const emissionIntensity = apiResponse["Emission intensity"];
+
+  return totalEmissions
+    .map((total) => {
+      const matchingIntensity = emissionIntensity.find(
+        (intensity) => intensity.date === total.date
+      );
+
+      // Skips unmatched dates. If different behaviour is desired, it can be defined here.
+      if (!matchingIntensity) return null;
+
+      return {
+        date: new Date(total.date * 1000).toISOString(),
+        total: {
+          value: total.value,
+          unit: total.unit,
+        },
+        intensity: {
+          value: matchingIntensity.value,
+          unit: matchingIntensity.unit,
+        },
+      };
+    })
+    .filter(Boolean);
 };
 
 export default async () => {
