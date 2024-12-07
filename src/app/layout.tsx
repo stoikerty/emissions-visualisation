@@ -1,5 +1,7 @@
 import StyledComponentsRegistry from "./StyledComponentsRegistry";
 import "./globals.css";
+import Navigation from "src/components/Navigation";
+import PageContainer from "src/components/PageContainer";
 
 export default function RootLayout({
   children,
@@ -12,7 +14,10 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <Navigation />
+        <PageContainer>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </PageContainer>
       </body>
     </html>
   );
