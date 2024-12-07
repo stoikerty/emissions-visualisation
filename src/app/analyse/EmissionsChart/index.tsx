@@ -4,8 +4,10 @@ import Chart, { ChartData } from "./Chart";
 import { EmissionData } from "src/services/emissions-api/types";
 import styles from "./styles.module.css";
 
+const convertKgToTons = (value: number) => value / 1000;
+
 const transformToChartData = (data: EmissionData[]): ChartData[] => {
-  // Group data by month
+  // group data by month
   const monthlyData = data.reduce((acc, item) => {
     const date = new Date(item.date);
     const monthName = date.toLocaleString("default", { month: "short" });
@@ -21,12 +23,29 @@ const transformToChartData = (data: EmissionData[]): ChartData[] => {
     return acc;
   }, {} as Record<string, { total: number; intensity: number; count: number }>);
 
-  // Calculate averages and convert kg to tons at the end
+  // calculate averages
   return Object.entries(monthlyData).map(([monthName, values]) => ({
     name: monthName,
-    total: values.total / values.count / 1000, // Convert to tons after averaging
-    intensity: values.intensity / values.count, // Average intensity
+    total: convertKgToTons(values.total / values.count),
+    intensity: values.intensity / values.count,
   }));
+};
+
+const getformattedStartEndDate = (data: EmissionData[]): string => {
+  // sort dates in ascending order
+  const dates = data.map((item) => new Date(item.date));
+  dates.sort((a, b) => a.getTime() - b.getTime());
+
+  // get start and end dates
+  const startDate = dates[0];
+  const endDate = dates[dates.length - 1];
+
+  // format dates into the specified string
+  const formatDate = (date: Date) =>
+    `${date.getDate()} ${date.toLocaleString("default", {
+      month: "short",
+    })} ${date.getFullYear()}`;
+  return `${formatDate(startDate)} to ${formatDate(endDate)}`;
 };
 
 export default function EmissionsChart({ data }: { data: EmissionData[] }) {
@@ -35,7 +54,9 @@ export default function EmissionsChart({ data }: { data: EmissionData[] }) {
       <div className={styles.topSection}>
         <span className={styles.title}>Emissions over time</span>
         <br />
-        <span className={styles.dateRange}>Emissions over time</span>
+        <span className={styles.dateRange}>
+          {getformattedStartEndDate(data)}
+        </span>
       </div>
       <Chart data={transformToChartData(data)} />
     </div>
