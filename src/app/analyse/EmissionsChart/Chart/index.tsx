@@ -77,7 +77,7 @@ const EmissionsChart: React.FC<EmissionsChartProps> = ({ data }) => {
           yAxisId="left"
           dataKey="total"
           fill="#00D3B9"
-          name="Total Emissions (tCO2e)"
+          name="Total Emissions"
         />
         <Line
           yAxisId="right"
@@ -85,7 +85,7 @@ const EmissionsChart: React.FC<EmissionsChartProps> = ({ data }) => {
           dataKey="intensity"
           stroke="#A761C1"
           strokeWidth={2}
-          name="Emissions Intensity (kgCO2e / m2)"
+          name="Emissions intensity"
           dot={{ fill: "#A761C1", r: 4 }} // Custom dot color and size
         />
       </ComposedChart>

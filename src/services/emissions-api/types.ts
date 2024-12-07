@@ -17,7 +17,6 @@ export type EmissionData = {
     unit: string;
   };
   intensity: {
-    label: string;
     value: number;
     unit: string;
   };
