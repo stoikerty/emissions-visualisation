@@ -29,3 +29,11 @@ A brief analysis of the figma project revealed the following:
 - basic navigation with logo on the left and a user-profile on the right
 - copyrighted font called `TT Hoves` is used
 - app icon logo
+
+### How to create the charts
+One of the most important facets of this work is which charting library should be chosen.
+- looked upmost popular libraries for reactjs
+  https://blog.logrocket.com/top-9-react-chart-libraries
+- considered `react-chartjs-2` at first due to its seemingly quick learning curve, however it was skipped. There were broken links in the readme signalling an old unmaintained project, and this was confirmed via the [github repo](https://github.com/reactchartjs/react-chartjs-2) which showed the last active commit having been done a year ago. maintenance and sustenance of a library is important due to the technical debt burden incurred when migrating away in a later lifecycle of a project.
+- D3 is an extremely popular charting library and has been for years, so choosing `Recharts` which itself is based on D3 was therefore an easy choice. The interoperability with D3 is a major benefit, and active maintenance was confirmed by checking the last commit which had been made within the last week.
+
