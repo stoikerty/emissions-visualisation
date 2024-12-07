@@ -1,8 +1,10 @@
 "use client";
+import { useEffect } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 
 import Chart from "src/components/Chart";
+import fetchEmissions from "src/services/emissions-api/fetchEmissions";
 
 const ImageBackground = styled.div`
   display: flex;
@@ -14,6 +16,15 @@ const PageContainer = styled.div`
 `;
 
 export default function Home() {
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchEmissions();
+      console.log("data: ", data);
+    };
+
+    fetchData();
+  });
+
   return (
     <>
       <ImageBackground>

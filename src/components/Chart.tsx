@@ -15,23 +15,23 @@ import {
 
 interface ChartData {
   name: string;
-  emissions: number;
+  total: number;
   intensity: number;
 }
 
 const data: ChartData[] = [
-  { name: "Jan", emissions: 100, intensity: 75 },
-  { name: "Feb", emissions: 90, intensity: 70 },
-  { name: "Mar", emissions: 80, intensity: 65 },
-  { name: "Apr", emissions: 70, intensity: 60 },
-  { name: "May", emissions: 65, intensity: 55 },
-  { name: "Jun", emissions: 60, intensity: 50 },
-  { name: "Jul", emissions: 55, intensity: 45 },
-  { name: "Aug", emissions: 50, intensity: 40 },
-  { name: "Sep", emissions: 45, intensity: 35 },
-  { name: "Oct", emissions: 40, intensity: 30 },
-  { name: "Nov", emissions: 35, intensity: 25 },
-  { name: "Dec", emissions: 30, intensity: 20 },
+  { name: "Jan", total: 100, intensity: 75 },
+  { name: "Feb", total: 90, intensity: 70 },
+  { name: "Mar", total: 80, intensity: 65 },
+  { name: "Apr", total: 70, intensity: 60 },
+  { name: "May", total: 65, intensity: 55 },
+  { name: "Jun", total: 60, intensity: 50 },
+  { name: "Jul", total: 55, intensity: 45 },
+  { name: "Aug", total: 50, intensity: 40 },
+  { name: "Sep", total: 45, intensity: 35 },
+  { name: "Oct", total: 40, intensity: 30 },
+  { name: "Nov", total: 35, intensity: 25 },
+  { name: "Dec", total: 30, intensity: 20 },
 ];
 
 const renderLegendText = (value: string, entry: any) => {
@@ -86,7 +86,7 @@ const EmissionsChart: React.FC = () => {
 
         <Bar
           yAxisId="left"
-          dataKey="emissions"
+          dataKey="total"
           fill="#00D3B9"
           name="Total Emissions (tCO2e)"
         />
