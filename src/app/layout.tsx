@@ -1,5 +1,5 @@
-import StyledComponentsRegistry from "./StyledComponentsRegistry";
 import "./globals.css";
+
 import Navigation from "src/components/Navigation";
 import PageContainer from "src/components/PageContainer";
 
@@ -15,9 +15,7 @@ export default function RootLayout({
       </head>
       <body>
         <Navigation />
-        <PageContainer>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </PageContainer>
+        <PageContainer>{children}</PageContainer>
       </body>
     </html>
   );

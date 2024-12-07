@@ -1,6 +1,11 @@
 "use client";
-import styled from "styled-components";
+import React, { ReactNode } from "react";
+import styles from "./styles.module.css";
 
-export default styled.div`
-  padding: 16px;
-`;
+interface PageContainerProps {
+  children: ReactNode;
+}
+
+export default function PageContainer({ children }: PageContainerProps) {
+  return <div className={styles.container}>{children}</div>;
+}

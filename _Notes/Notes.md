@@ -41,7 +41,6 @@ One of the most important facets of this work is which charting library should b
 ### Creating the project boilerplate
 - use latest node LTS release (v20.9.0) via `.nvmrc`
 - generated new project with `npx create-next-app@latest [APP]`
-- added popular styled-components library for general purpose styling
 - chose an alternative free font similar to `TT Hoves` called `Poppins`
 - extracted logo svg from figma
 - created a favicon based on the color scheme from navigation
