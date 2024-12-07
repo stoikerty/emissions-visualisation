@@ -2,6 +2,7 @@
 import React from "react";
 import Chart, { ChartData } from "./Chart";
 import { EmissionData } from "src/services/emissions-api/types";
+import styles from "./styles.module.css";
 
 const transformToChartData = (data: EmissionData[]): ChartData[] => {
   // Group data by month
@@ -29,5 +30,14 @@ const transformToChartData = (data: EmissionData[]): ChartData[] => {
 };
 
 export default function EmissionsChart({ data }: { data: EmissionData[] }) {
-  return <Chart data={transformToChartData(data)} />;
+  return (
+    <div className={styles.container}>
+      <div className={styles.topSection}>
+        <span className={styles.title}>Emissions over time</span>
+        <br />
+        <span className={styles.dateRange}>Emissions over time</span>
+      </div>
+      <Chart data={transformToChartData(data)} />
+    </div>
+  );
 }

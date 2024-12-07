@@ -1,0 +1,29 @@
+.container {
+  padding: 20px;
+  background-color: white;
+}
+
+.topSection {
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500; /* deviated from design due to different font */
+  line-height: 18px;
+  letter-spacing: 0.1599999964237213px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #081014;
+}
+
+.dateRange {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.3199999928474426px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #4b5154;
+}
