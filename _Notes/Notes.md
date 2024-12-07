@@ -60,6 +60,10 @@ One of the most important facets of this work is which charting library should b
 - use generic fetch available on the browser
 - we are not passing data directly to the app in order to respect the boundary between api and user interface. this mitigates future changes to the api allows for structured flexibility
 
+### Production Deploy
+A version of this project is available via the following URL
+https://emissions-visualisat-git-72bb72-jorge-antunes-projects-fee3859b.vercel.app/analyse
+
 ### Cut corners
 - used chatGPT to accelerate coming up with an initial styled chart. styling can be a bit of a rabbit-hole, and I didn't want to spend too much time reading the rechart docs
 - didn't use css-variables or "mini" design system. for a simple 1-page this can be ok, but a more elaborate design system should be created for efficient re-use of styles

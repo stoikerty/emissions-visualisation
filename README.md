@@ -1,5 +1,7 @@
 # emissions-visualisation
 
+This project can be previewed on https://emissions-visualisat-git-72bb72-jorge-antunes-projects-fee3859b.vercel.app/analyse
+
 ## Instructions
 
 ### Prerequisites
