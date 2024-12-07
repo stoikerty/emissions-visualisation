@@ -2,6 +2,8 @@
 import Image from "next/image";
 import styled from "styled-components";
 
+import Chart from "src/components/Chart";
+
 const ImageBackground = styled.div`
   display: flex;
   padding: 16px;
@@ -24,6 +26,7 @@ export default function Home() {
         />
       </ImageBackground>
       <Text>Antwerp plant</Text>
+      <Chart />
     </>
   );
 }
