@@ -4,9 +4,11 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
   /* replace with licenced TT Hoves font and font weight 400 */
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  color: #4b5154;
 }
 
 body {
@@ -29,5 +31,4 @@ p {
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color: #4b5154;
 }

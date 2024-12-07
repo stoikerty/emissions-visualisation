@@ -5,13 +5,10 @@ import useFetchedEmissionsData from "./hooks/useFetchedEmissionsData";
 
 export default function Analyse() {
   const { data, loading, error } = useFetchedEmissionsData();
-
-  if (loading) return <p>Loading data...</p>;
-  if (error) return <p>{error}</p>;
-
   return (
     <>
       <Introduction />
+      <br />
 
       {loading && "Loading Analysis Data..."}
       {!loading && data && <EmissionsChart data={data} />}
