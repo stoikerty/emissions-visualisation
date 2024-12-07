@@ -2,6 +2,8 @@
 
 This project can be previewed on https://emissions-visualisat-git-72bb72-jorge-antunes-projects-fee3859b.vercel.app/analyse
 
+Notes taken during the creation of the project can be found [in the _Notes folder](_Notes/Notes.md)
+
 ## Instructions
 
 ### Prerequisites
