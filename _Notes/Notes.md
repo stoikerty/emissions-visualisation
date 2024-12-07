@@ -56,3 +56,7 @@ One of the most important facets of this work is which charting library should b
 	- the `Legend` component has various defaults which needed to be customised using more complex parameters (custom `renderLegendText` method  on `formatter` prop for customising color)
 	- there are slight discrepancies on the styling of the legend (text not correctly center aligned, small margin between legend and chart, no rounded corners on square icon). This could be further customised with a custom prop `content={renderLegend}` similar to the `formatter` prop, or by further exploring the recharts api.
 - left surrounding style out for now (headings and three dots on the right)
+
+### Fetching the data
+- use generic fetch available on the browser
+- we are not passing data directly to the app in order to respect the boundary between api and user interface. this mitigates future changes to the api allows for structured flexibility
