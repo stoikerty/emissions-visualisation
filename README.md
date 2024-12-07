@@ -25,3 +25,9 @@ yarn
 # run development server
 yarn dev
 ```
+
+### Building the project
+```sh
+# generates a production deploy
+yarn build
+```

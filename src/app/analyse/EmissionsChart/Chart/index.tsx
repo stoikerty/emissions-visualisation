@@ -23,7 +23,7 @@ interface EmissionsChartProps {
   data: ChartData[];
 }
 
-const renderLegendText = (value: string, entry: any) => {
+const renderLegendText = (value: string) => {
   return <span style={{ color: "#787D7F" }}>{value}</span>;
 };
 
