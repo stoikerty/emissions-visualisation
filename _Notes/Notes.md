@@ -65,4 +65,3 @@ One of the most important facets of this work is which charting library should b
 - didn't use css-variables or "mini" design system. for a simple 1-page this can be ok, but a more elaborate design system should be created for efficient re-use of styles
 - Chart component was not extracted into separate component and currently is too opinionated on the styles it contains. It is however isolated from other functionality and can be moved out to be shared without a lot of effort
 - omitted the small three-dot icon. the figma-design didn't use an svg, so I skipped this
-

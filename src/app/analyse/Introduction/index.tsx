@@ -1,6 +1,8 @@
+import styles from "./styles.module.css";
+
 export default function Introduction() {
   return (
-    <>
+    <div className={styles.container}>
       <h5>Antwerp plant</h5>
       <p>
         The carbon emissions dashboard of our chemical plant in Antwerp contains
@@ -8,6 +10,6 @@ export default function Introduction() {
         of the facilities in the surrounding area. This information is essential
         in order to monitor and reduce our carbon footprint.
       </p>
-    </>
+    </div>
   );
 }
