@@ -22,10 +22,12 @@ export default (apiResponse: ApiResponse): EmissionData[] => {
       return {
         date: new Date(total.date * 1000),
         total: {
+          label: "Total emissions",
           value: total.value,
           unit: total.unit,
         },
         intensity: {
+          label: "Emission intensity",
           value: matchingIntensity.value,
           unit: matchingIntensity.unit,
         },

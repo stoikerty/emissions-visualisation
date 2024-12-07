@@ -12,10 +12,12 @@ export type ApiResponse = {
 export type EmissionData = {
   date: Date;
   total: {
+    label: string;
     value: number;
     unit: string;
   };
   intensity: {
+    label: string;
     value: number;
     unit: string;
   };
